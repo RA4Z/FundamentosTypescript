@@ -1,7 +1,11 @@
 export class View {
+    //escapar está como opcional aqui, adiciona ? para se tornar opcional
     constructor(seletor, escapar) {
         this.escapar = false;
         this.element = document.querySelector(seletor);
+        if (escapar) {
+            this.escapar = escapar;
+        }
     }
     update(model) {
         let template = this.template(model);

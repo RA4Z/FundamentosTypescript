@@ -3,8 +3,12 @@ export abstract class View<T> {
     protected element: HTMLElement;
     private escapar: boolean = false;
 
-    constructor(seletor: string, escapar: boolean) {
+    //escapar está como opcional aqui, adiciona ? para se tornar opcional
+    constructor(seletor: string, escapar?: boolean) {
         this.element = document.querySelector(seletor);
+        if(escapar) {
+            this.escapar = escapar;
+        }
     }
 
     public update(model: T): void {
