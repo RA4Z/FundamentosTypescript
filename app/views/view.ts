@@ -5,7 +5,12 @@ export abstract class View<T> {
 
     //escapar está como opcional aqui, adiciona ? para se tornar opcional
     constructor(seletor: string, escapar?: boolean) {
-        this.element = document.querySelector(seletor);
+        const element = document.querySelector(seletor);
+        if(element) {
+            this.element = element as HTMLElement;
+        } else {
+            throw Error(`Seletor ${seletor} não existe no Desenvolvedor.`)
+        }
         if(escapar) {
             this.escapar = escapar;
         }
