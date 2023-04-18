@@ -1,11 +1,7 @@
-import { inspect } from "../decorators/inspect.js";
-import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
-
 export abstract class View<T> {
 
     protected element: HTMLElement;
 
-    //escapar está como opcional aqui, adiciona ? para se tornar opcional
     constructor(seletor: string) {
         const element = document.querySelector(seletor);
         if(element) {
@@ -16,8 +12,6 @@ export abstract class View<T> {
         
     }
 
-    @logarTempoDeExecucao()
-    @inspect()
     public update(model: T): void {
         let template = this.template(model);
         this.element.innerHTML = template;
