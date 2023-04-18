@@ -1,7 +1,10 @@
 # FundamentosTypescript
-Aula de fundamentos de Typescript da Alura, curso 1 e curso 2 completos.
+Aula de fundamentos de Typescript da Alura, Formação completa do curso.
 
 
 
 NPM INSTALL e então
 NPM RUN START para começar a rodar o projeto
+
+Abrir pasta servidor-api  e então NPM INSTALL
+e NPM RUN STAR para rodar a API do projeto.
